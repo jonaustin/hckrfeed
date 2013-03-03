@@ -9,7 +9,7 @@
 %p
   %strong= model_class.human_attribute_name(:link) + ':'
   %br
-  = @link.link
+  =link_to @link.link, @link.link
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), links_path, :class => 'btn'

@@ -1,8 +1,6 @@
 class LinksController < ApplicationController
-  # GET /links
-  # GET /links.json
   def index
-    @links = Link.all
+    @links = Link.sorted
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,8 +8,6 @@ class LinksController < ApplicationController
     end
   end
 
-  # GET /links/1
-  # GET /links/1.json
   def show
     @link = Link.find(params[:id])
 
@@ -21,8 +17,6 @@ class LinksController < ApplicationController
     end
   end
 
-  # GET /links/new
-  # GET /links/new.json
   def new
     @link = Link.new
 
@@ -31,14 +25,10 @@ class LinksController < ApplicationController
       format.json { render json: @link }
     end
   end
-
-  # GET /links/1/edit
   def edit
     @link = Link.find(params[:id])
   end
 
-  # POST /links
-  # POST /links.json
   def create
     @link = Link.new(params[:link])
 
@@ -53,8 +43,6 @@ class LinksController < ApplicationController
     end
   end
 
-  # PUT /links/1
-  # PUT /links/1.json
   def update
     @link = Link.find(params[:id])
 
@@ -69,8 +57,6 @@ class LinksController < ApplicationController
     end
   end
 
-  # DELETE /links/1
-  # DELETE /links/1.json
   def destroy
     @link = Link.find(params[:id])
     @link.destroy

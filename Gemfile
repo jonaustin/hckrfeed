@@ -4,6 +4,9 @@ gem 'rails', '3.2.12'
 gem 'thin'
 gem 'sqlite3'
 gem 'jquery-rails'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+gem 'therubyracer'
 
 
 # Gems used only for assets and not required

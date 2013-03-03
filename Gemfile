@@ -26,4 +26,7 @@ group :development, :test do
   gem 'debugger'
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'terminal-notifier-guard'
+  gem 'guard-rspec'
+  gem 'rb-fsevent'
 end

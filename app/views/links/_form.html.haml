@@ -8,9 +8,9 @@
     .controls
       = f.text_field :name, :class => 'text_field'
   .control-group
-    = f.label :link, :class => 'control-label'
+    = f.label :url, :class => 'control-label'
     .controls
-      = f.text_field :link, :class => 'text_field'
+      = f.text_field :url, :class => 'text_field'
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), links_path, :class => 'btn'

@@ -1,5 +1,5 @@
 class Link < ActiveRecord::Base
   attr_accessible :link, :username
 
-  scope :sorted, order('created_at DESC')
+  scope :date_desc, order('created_at DESC')
 end

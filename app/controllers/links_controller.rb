@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
   def index
-    @links = Link.sorted
+    @links = Link.date_desc
 
     respond_to do |format|
       format.html # index.html.erb

@@ -22,4 +22,17 @@ describe Link do
       Link.date_desc.first.should == Link.last
     end
   end
+
+  context "score" do
+    let(:link) { create(:link) }
+
+    it "should increase score" do
+      expect { link.increment_score! }.to change{ link.score }.from(0).to(1)
+    end
+
+    it "should decrease score" do
+      link.increment_score!
+      expect { link.decrement_score! }.to change{ link.score }.from(1).to(0)
+    end
+  end
 end

@@ -7,6 +7,7 @@ gem 'jquery-rails'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer'
+gem 'haml-rails'
 
 
 # Gems used only for assets and not required

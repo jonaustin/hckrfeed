@@ -29,4 +29,5 @@ group :development, :test do
   gem 'terminal-notifier-guard'
   gem 'guard-rspec'
   gem 'rb-fsevent'
+  gem 'factory_girl'
 end

@@ -11,7 +11,6 @@
   %tbody
     - @links.each do |link|
       %tr
-        %td= link_to link.id, link_path(link)
         %td= link.username
         %td= link_to link.link, link.link
         %td=l link.created_at

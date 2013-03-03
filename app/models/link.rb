@@ -13,7 +13,7 @@ class Link < ActiveRecord::Base
   end
 
   def decrement_score!
-    self.score += 1
+    self.score -= 1
     save!
   end
 end

@@ -12,4 +12,11 @@ RSpec.configure do |config|
   config.order = "random"
   config.include FactoryGirl::Syntax::Methods
   Capybara.javascript_driver = :webkit
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :truncation # sqlite can't use transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+  config.before(:each) { DatabaseCleaner.start }
+  config.after(:each)  { DatabaseCleaner.clean }
 end

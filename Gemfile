@@ -31,4 +31,5 @@ group :development, :test do
   gem 'rb-fsevent'
   gem 'factory_girl'
   gem 'capybara-webkit'
+  gem 'database_cleaner'
 end

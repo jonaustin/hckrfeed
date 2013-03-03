@@ -16,10 +16,17 @@ describe Link do
   end
 
   context "scopes" do
+    before :each do
+      create(:link, score: 5)
+      create(:link)
+    end
+
     it "should allow sort by date desc" do
-      create(:link)
-      create(:link)
       Link.date_desc.first.should == Link.last
+    end
+
+    it "should allow sort by score desc" do
+      Link.score_desc.first.should == Link.first
     end
   end
 

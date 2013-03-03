@@ -1,6 +1,10 @@
 class LinksController < ApplicationController
   def index
-    @links = Link.date_desc
+    if params[:order] == 'date'
+      @links = Link.date_desc
+    else
+      @links = Link.score_desc
+    end
 
     respond_to do |format|
       format.html # index.html.erb

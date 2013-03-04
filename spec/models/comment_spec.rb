@@ -1,5 +1,13 @@
 require 'spec_helper'
 
 describe Comment do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "validation failure" do
+    it "without link" do
+      Comment.new.should have(1).error_on(:link_id)
+    end
+
+    it "without comment" do
+      Comment.new.should have(1).error_on(:comment)
+    end
+  end
 end

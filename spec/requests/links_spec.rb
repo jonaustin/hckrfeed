@@ -2,10 +2,21 @@ require 'spec_helper'
 
 describe "Links" do
   describe "GET /links" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get links_path
-      response.status.should be(200)
+    before :each do
+      create(:link, name: 'default first', score: 1)
+      create(:link, name: 'Hckrfeed', score: 0)
+      visit links_path
+    end
+
+    it "should show link with highest score first by default" do
+      page.first('#links tbody tr td:nth-child(4)').text.should =~ /default first/
+    end
+
+    it "should change order when upvoted" do
+      link_id = Link.find_by_name('Hckrfeed').id
+      click_on "upvote_#{link_id}"
+      click_on "upvote_#{link_id}"
+      page.first('#links tbody tr td:nth-child(4)').text.should =~ /Hckrfeed/
     end
   end
 end

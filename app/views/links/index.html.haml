@@ -4,6 +4,8 @@
 %table.table.table-striped#links
   %thead
     %tr
+      %th
+      %th= model_class.human_attribute_name(:score)
       %th= model_class.human_attribute_name(:name)
       %th= model_class.human_attribute_name(:username)
       %th Submitted At
@@ -11,6 +13,8 @@
   %tbody
     - @links.each do |link|
       %tr
+        %td= link_to 'Upvote', upvote_link_path(link), id: "upvote_#{link.id}", class: "upvote" 
+        %td= link.score
         %td= link_to link.name, link_path(link)
         %td= link.username
         %td=l link.created_at
@@ -18,4 +22,4 @@
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_link_path(link), :class => 'btn btn-mini'
           = link_to t('.destroy', :default => t("helpers.links.destroy")), link_path(link), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
 
-= link_to t('.new', :default => t("helpers.links.submit_link")), new_link_path, :class => 'btn btn-primary'
+= link_to t('.new', :default => t("helpers.links.submit_link")), new_link_path, :class => 'btn btn-primary', :id => 'fuck'

@@ -31,5 +31,8 @@ describe LinksController do
       delete("/links/1").should route_to("links#destroy", :id => "1")
     end
 
+    it "routes to #destroy" do
+      get("/links/1/upvote").should route_to("links#upvote", :id => "1")
+    end
   end
 end

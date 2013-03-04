@@ -70,4 +70,14 @@ class LinksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def upvote
+    @link = Link.find(params[:id])
+    @link.increment_score!
+
+    respond_to do |format|
+      format.html { redirect_to links_url }
+      format.json { head :no_content }
+    end
+  end
 end

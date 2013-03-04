@@ -7,6 +7,7 @@
       %th
       %th Score
       %th Name
+      %th
       %th Username
       %th
       %th
@@ -16,6 +17,7 @@
         %td= link_to 'Upvote', upvote_link_path(link), id: "upvote_#{link.id}", class: "upvote" 
         %td= link.score
         %td= link_to link.name, link_path(link)
+        %td= link_to "#{link.comments.count} comments", link_path(link)
         %td= link.username
         %td= time_ago(link.created_at)
         %td

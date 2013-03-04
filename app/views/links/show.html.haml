@@ -21,6 +21,7 @@
 
 %br
 
+%a#comments
 %table.table.table-striped
   %thead
     %tr
@@ -36,6 +37,8 @@
         %td= comment.comment
         %td= link_to comment.link.name, link_path(comment.link_id)
         %td= time_ago(comment.created_at)
+
+= link_to 'New Comment', new_comment_path
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), links_path, :class => 'btn'

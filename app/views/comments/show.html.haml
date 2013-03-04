@@ -13,7 +13,7 @@
 %p
   %strong= model_class.human_attribute_name(:link_id) + ':'
   %br
-  = @comment.link_id
+  = link_to @comment.link.name, link_path(@comment.link_id)
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), comments_path, :class => 'btn'

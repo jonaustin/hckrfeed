@@ -4,7 +4,7 @@
 %table.table.table-striped
   %thead
     %tr
-      %th= model_class.human_attribute_name(:id)
+      %th
       %th= model_class.human_attribute_name(:username)
       %th= model_class.human_attribute_name(:comment)
       %th= model_class.human_attribute_name(:link_id)
@@ -13,10 +13,10 @@
   %tbody
     - @comments.each do |comment|
       %tr
-        %td= link_to comment.id, comment_path(comment)
+        %td= link_to 'Show', comment_path(comment)
         %td= comment.username
         %td= comment.comment
-        %td= comment.link_id
+        %td= link_to comment.link.name, link_path(comment.link_id)
         %td=l comment.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_comment_path(comment), :class => 'btn btn-mini'

@@ -3,7 +3,7 @@ class Link < ActiveRecord::Base
 
   has_many :comments, :dependent => :destroy
 
-  validates_presence_of :url
+  validates_format_of :url, :with => %r{^http://}, :message => 'Must be a valid url - e.g. http://google.com'
   validates_presence_of :username
   validates_presence_of :name
 

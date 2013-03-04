@@ -2,12 +2,13 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
 gem 'thin'
-gem 'pg'
+gem 'sqlite3'
 gem 'jquery-rails'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer'
 gem 'haml-rails'
+gem 'dynamic_form' # error_message_on
 
 
 # Gems used only for assets and not required

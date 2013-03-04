@@ -3,14 +3,17 @@
     = f.label :username, :class => 'control-label'
     .controls
       = f.text_field :username, :class => 'text_field'
+      = f.error_message_on :username
   .control-group
     = f.label :comment, :class => 'control-label'
     .controls
       = f.text_field :comment, :class => 'text_field'
+      = f.error_message_on :comment
   .control-group
     = f.label :link_id, :class => 'control-label'
     .controls
       = f.collection_select(:link_id, Link.all, :id, :name)
+      = f.error_message_on :link_id
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), comments_path, :class => 'btn'

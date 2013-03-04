@@ -23,8 +23,8 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'debugger'
   gem 'pry-rails'
+  gem 'pry-debugger'
   gem 'rspec-rails'
   gem 'terminal-notifier-guard'
   gem 'guard-rspec'

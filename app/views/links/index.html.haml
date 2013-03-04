@@ -1,18 +1,18 @@
 - model_class = Link
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.pluralize
-%table.table.table-striped
+%table.table.table-striped#links
   %thead
     %tr
-      %th= model_class.human_attribute_name(:username)
       %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:username)
       %th Submitted At
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @links.each do |link|
       %tr
-        %td= link.username
         %td= link_to link.name, link_path(link)
+        %td= link.username
         %td=l link.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_link_path(link), :class => 'btn btn-mini'

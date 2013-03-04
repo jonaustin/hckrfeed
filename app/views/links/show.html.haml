@@ -3,17 +3,21 @@
   %h1=t '.title', :default => model_class.model_name.human
 
 %p
-  %strong= model_class.human_attribute_name(:name) + ':'
+  %strong Name:
   %br
   =link_to @link.name, @link.url
 %p
-  %strong= model_class.human_attribute_name(:username) + ':'
+  %strong Username:
   %br
   = @link.username
 %p
-  %strong= model_class.human_attribute_name(:score) + ':'
+  %strong Score:
   %br
   = @link.score
+%p
+  %strong Created:
+  %br
+  = time_ago(@link.created_at)
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), links_path, :class => 'btn'

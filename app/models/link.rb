@@ -1,7 +1,7 @@
 class Link < ActiveRecord::Base
   attr_accessible :url, :username, :name, :score
 
-  has_many :comments
+  has_many :comments, :dependent => :destroy
 
   validates_presence_of :url
   validates_presence_of :username
